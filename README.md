@@ -244,6 +244,7 @@ RCC->AHB1ENR |= peripheral_bit;
 
 ## What I Learned
 - What specifications to look for in a development board before buying
+- To review a board's datasheet and the resources avaiable for it BEFORE purchasing
 - How to write a GNU linker script
 - How the IVT works and triggers the respective interrupt handlers
 - The basic code required for startup on an ARM MCU
