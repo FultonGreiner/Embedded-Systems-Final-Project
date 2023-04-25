@@ -59,7 +59,7 @@ The datasheet contains information necessary for much of the project. The inform
 
 ### 4. Memory Map
 
-The following information can be found in Section 5 of the MCU datasheet. There are other sections of memory, but these are the ones necessary for this project.
+The following information can be found in Section 8 of the MCU datasheet. There are other sections of memory, but these are the ones necessary for this project.
 
 | Section | Start Address | Stop Address | Size |
 | ------- | ------------- | ------------ | ---- |
