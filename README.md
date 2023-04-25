@@ -28,7 +28,9 @@ Why I selected this project:
 | ----- | ------------- | --------------- |
 | [32F411EDISCOVERY](https://www.st.com/en/evaluation-tools/32f411ediscovery.html) | [STM32F411xC STM32F411xE](https://www.digikey.ch/htmldatasheets/production/1776125/0/0/1/stm32f411xc-stm32f411xe.html) | [Discovery kit with STM32F411VE MCU](https://www.st.com/resource/en/data_brief/32f411ediscovery.pdf) |
 
-#### Required Tools
+#### Overview
+
+##### Tools
 | Tool | Purpose |
 | ---- | ------- |
 | Ccache | accelerated recompilation |
@@ -36,6 +38,18 @@ Why I selected this project:
 | GNU Make | build automation |
 | STLINK Tools | debug and flashing |
 | ARM Assembly | memory and thread profiling |
+
+##### Programming Languages
+- ARM Assembly
+- C
+- C++
+
+##### Test
+| Tool | Purpose |
+| ---- | ------- |
+| Digital Multimeter | continuity and coupling |
+| Logic Probe | reading pin values |
+| Oscilloscope | in-circuit validation |
 
 ### 1. Datasheet Review
 
