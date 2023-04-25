@@ -99,9 +99,28 @@ The selected MCU includes 16 ARM interrupts, as well as 62 MCU specific interrup
 
 ![image](https://user-images.githubusercontent.com/65039828/234355733-7bfff272-d56b-490c-b76c-4be047ed9565.png)
 
+From `main.c`:
+```
+__attribute__((section(".vectors"))) void (*tab[16 + 62])(void) = {_estack, _reset};
+```
+
 ### 3. Bare-Metal Firmware
 
-#### Linker Script
+```
+// Startup code
+__attribute__((naked, noreturn)) void _reset(void) {
+  for (;;) (void) 0;
+}
+
+extern void _estack(void);
+
+// 16 standard and 91 STM32-specific handlers
+__attribute__((section(".vectors"))) void (*tab[16 + 91])(void) = {
+  _estack, _reset
+};
+```
+
+### 4. Linker Script
 From `link.ld`:
 ```
 /* set entry point to beginning of the firmware */
