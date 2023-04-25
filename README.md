@@ -1,19 +1,9 @@
 # Embedded-Systems-Final-Project
 
-## About Me
-
-I am a junior in IE and self-taught Embedded Systems Engineer.
-
-Currently an Embedded Systems Engineer at Continental AG working in Industrial IoT, where I primarily work with:
-- Bare-metal / Embedded Linux drivers
-- Closed-loop control systems
-- Low-level networking
-- PCBs and schematics
-
 ## Purpose
 
 Why I selected this project:
-- Understand ARM acrhitecture and the MCU startup procedure
+- Understand ARM architecture and the MCU startup procedure
 - Stop relying on proprietary vendor SDKs
 - Improve my skills in working with the wide array of open-source Embedded Software Tools 
 - Learn to work with new MCUs or ones I design myself
