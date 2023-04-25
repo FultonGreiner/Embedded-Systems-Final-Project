@@ -89,7 +89,6 @@ MEMORY {
 }
 ```
 
-
 ### 5. GPIOs
 
 The following peripherals will be used in this project, and can be found in Section 5 of the MCU datasheet.
@@ -125,7 +124,7 @@ struct gpio {
 #define GPIO(bank) ((struct gpio *) (0x40020000 + 0x400 * (bank)))
 ```
 
-#### Interrupt Vector Table (IVT)
+### 6. Interrupt Vector Table (IVT)
 
 The selected MCU includes 16 ARM interrupts, as well as 62 MCU specific interrupts.
 
@@ -134,6 +133,15 @@ The selected MCU includes 16 ARM interrupts, as well as 62 MCU specific interrup
 From `main.c`:
 ```
 __attribute__((section(".vectors"))) void (*tab[16 + 62])(void) = {_estack, _reset};
+```
+
+From `link.ld':
+```
+/* set entry point to beginning of the firmware */
+ENTRY(_reset);
+...
+/* set stack pointer to end of SRAM */
+_estack = ORIGIN(sram) + LENGTH(sram);
 ```
 
 ### 3. Bare-Metal Firmware
