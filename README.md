@@ -232,15 +232,27 @@ RCC->AHB1ENR |= peripheral_bit;
 
 ![image](https://user-images.githubusercontent.com/65039828/234365783-176be1f6-9f07-445b-8083-b41a8a70590b.png)
 
+Redirecting `printf()` to UART for USB debug output:
 
+From `sys.c':
+```
+int _write(int fd, char *p, int len) {
+  (void) fd, (void) p, (void) len;
+  if (fd == 1) uart_write(UART1, p, (size_t) len);
+  return -1;
+}
+```
 
-### 8. Webserver
+This will redirect the buffer to UART1 if `fd == 1`.
+
+### 9. Webserver
 
 
 
 ## Problems
 - Segger's STLinkReflash Utility
-- 
+  - After converting the onboard STLINK to JLINK, the tool failed in reverting it back
+  - I was unable to read the debug output which I believe was due to the default baud rate changing
 
 ## What I Learned
 - What specifications to look for in a development board before buying
