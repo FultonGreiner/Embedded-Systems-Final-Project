@@ -51,7 +51,17 @@ Why I selected this project:
 | Logic Probe | reading pin values |
 | Oscilloscope | in-circuit validation |
 
-### 1. Datasheet Review
+### 1. Project Architecture
+
+The project primarily consists of:
+- Drivers
+- Embedded webserver
+- Power Supply
+
+![image](https://user-images.githubusercontent.com/65039828/234351505-14eef787-66e9-48a5-9525-9acca3ce7cdf.png)
+
+
+### 2. Datasheet Review
 
 The datasheet contains information necessary for much of the project. The information gathered will be used for everything from controlling the clock frequency, to creating the IVT and its corresponding interrupt handlers.
 
