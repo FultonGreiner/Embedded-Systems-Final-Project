@@ -21,12 +21,14 @@ Why I selected this project:
 
 ## Progress
 
-### 0. Board Selection and Toolchain Setup
+### 0. Board Selection
 
 #### Selected Board
 | Board | MCU Datasheet | Board Data Brief |
 | ----- | ------------- | --------------- |
 | [32F411EDISCOVERY](https://www.st.com/en/evaluation-tools/32f411ediscovery.html) | [STM32F411xC STM32F411xE](https://www.digikey.ch/htmldatasheets/production/1776125/0/0/1/stm32f411xc-stm32f411xe.html) | [Discovery kit with STM32F411VE MCU](https://www.st.com/resource/en/data_brief/32f411ediscovery.pdf) |
+
+### 1. Toolchain Setup
 
 #### Overview
 
@@ -51,7 +53,7 @@ Why I selected this project:
 | Logic Probe | reading pin values |
 | Oscilloscope | in-circuit validation |
 
-### 1. Project Architecture
+### 2. Project Architecture
 
 The project primarily consists of:
 - Drivers
@@ -61,11 +63,11 @@ The project primarily consists of:
 ![image](https://user-images.githubusercontent.com/65039828/234351505-14eef787-66e9-48a5-9525-9acca3ce7cdf.png)
 
 
-### 2. Datasheet Review
+### 3. Datasheet Review
 
 The datasheet contains information necessary for much of the project. The information gathered will be used for everything from controlling the clock frequency, to creating the IVT and its corresponding interrupt handlers.
 
-#### Memory Map
+### 4. Memory Map
 
 The following information can be found in Section 5 of the MCU datasheet. There are other sections of memory, but these are the ones necessary for this project.
 
@@ -77,6 +79,15 @@ The following information can be found in Section 5 of the MCU datasheet. There 
 | Flash | 0x0800 0000 | 0x0807 FFFF | 512 Kb |
 
 ![image](https://user-images.githubusercontent.com/65039828/234352358-77d14d8d-fff4-468e-934a-d594a478757a.png)
+
+From `link.ld`:
+```
+/* define the memory regions */
+MEMORY {
+	flash(rx) : ORIGIN = 0x08000000, LENGTH = 512k		
+	sram(rwx) : ORIGIN = 0x20000000, LENGTH = 128k
+}
+```
 
 
 #### Peripherals
