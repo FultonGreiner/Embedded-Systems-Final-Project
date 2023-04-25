@@ -124,6 +124,25 @@ struct gpio {
 #define GPIO(bank) ((struct gpio *) (0x40020000 + 0x400 * (bank)))
 ```
 
+From `main.c`:
+```
+enum {
+	GPIO_MODE_INPUT,
+	GPIO_MODE_OUTPUT,
+	GPIO_MODE_AF,
+	GPIO_MODE_ANALOG
+};
+
+static inline void gpio_set_mode(uint16_t pin, uint8_t mode) {
+	struct gpio *gpio = GPIO(PINBANK(pin));
+	int n = PINNO(pin);
+	// clear current setting
+	gpio->MODER &= ~(3U << (n * 2));
+	// set new mode
+	gpio->MODER |= (mode & 3U) << (n * 2);
+}
+```
+
 ### 6. Interrupt Vector Table (IVT)
 
 The selected MCU includes 16 ARM interrupts, as well as 62 MCU specific interrupts.
@@ -200,6 +219,10 @@ struct rcc {
 };
 #define RCC ((struct rcc *) 0x40023800)
 ```
+
+### 8. Webserver
+
+
 
 ## Problems
 
