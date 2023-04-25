@@ -90,7 +90,7 @@ MEMORY {
 ```
 
 
-#### Peripherals
+### 5. GPIOs
 
 The following peripherals will be used in this project, and can be found in Section 5 of the MCU datasheet.
 
@@ -103,6 +103,23 @@ The following peripherals will be used in this project, and can be found in Sect
 
 ![image](https://user-images.githubusercontent.com/65039828/234352876-be59c644-599e-4c1d-8aed-e0c7dc799e27.png)
 ![image](https://user-images.githubusercontent.com/65039828/234352912-b0416102-61a5-4808-b50c-3b63b30cb664.png)
+
+From `main.h`:
+```
+struct gpio {
+	volatile uint32_t MODER,
+			 OTYPER,
+			 OSPEEDR,
+			 PUPDR,
+			 IDR,
+			 ODR,
+			 BSRR,
+			 LCKR,
+			 AFRL,
+			 AFRH;
+};
+#define GPIO(bank) ((struct gpio *) (0x40020000 + 0x400 * (bank)))
+```
 
 #### Interrupt Vector Table (IVT)
 
