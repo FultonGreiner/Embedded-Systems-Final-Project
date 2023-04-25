@@ -93,8 +93,18 @@ The following peripherals will be used in this project, and can be found in Sect
 ![image](https://user-images.githubusercontent.com/65039828/234352876-be59c644-599e-4c1d-8aed-e0c7dc799e27.png)
 ![image](https://user-images.githubusercontent.com/65039828/234352912-b0416102-61a5-4808-b50c-3b63b30cb664.png)
 
+#### Interrupt Vector Table
+
 ### 3. Bare-Metal Firmware
 
+#### Interrupt Vector Table (IVT)
+
+The selected MCU includes 16 ARM interrupts, as well as 62 MCU specific interrupts.
+
+![image](https://user-images.githubusercontent.com/65039828/234355733-7bfff272-d56b-490c-b76c-4be047ed9565.png)
+
+
+#### Linker Script
 From `link.ld`:
 ```
 /* set entry point to beginning of the firmware */
