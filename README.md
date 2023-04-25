@@ -15,7 +15,8 @@ Currently an Embedded Systems Engineer at Continental AG working in Industrial I
 Why I selected this project:
 - Understand ARM acrhitecture and the MCU startup procedure
 - Stop relying on proprietary vendor SDKs
-- Gain the ability to work with new MCUs or ones I design myself
+- Improve my skills in working with the wide array of open-source Embedded Software Tools 
+- Learn to work with new MCUs or ones I design myself
 - Gain respect for the people that work with these board bring up process before any tools are created
 
 ## Progress
