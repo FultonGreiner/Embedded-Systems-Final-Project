@@ -247,12 +247,23 @@ This will redirect the buffer to UART1 if `fd == 1`.
 
 ### 9. Webserver
 
-
+I Mongoose Web Server, an open-source embedded webserver platform, to locally host a customizable device dashboard. I was able to get this working a few times until unexpected problems occured.
 
 ## Problems
 - Segger's STLinkReflash Utility
   - After converting the onboard STLINK to JLINK, the tool failed in reverting it back
   - I was unable to read the debug output which I believe was due to the default baud rate changing
+  - The changed baud rate prevented me from recieving the IP address of my webserver
+- Lead times
+  - When I tried to purchase a replacement board of the same model, the lead time was 92 weeks
+- Changing development boards
+  - The data sheet for the new board was much more confusing and disorganized than the previous
+  - There was very little publically availble information online forums or elsewhere
+  - Many changes were required including resizing the IVT and completely redoing the Memory Mapping, GPIOs, UART, and RCC. This required me to redo nearly the entire project again.
+- MacOS
+  - I found that MacOS is not the friendliest environment for embedded development or electronics
+  - A Windows VM was required for some purposes, such as using a USB oscilloscope
+- 
 
 ## What I Learned
 - What specifications to look for in a development board before buying
