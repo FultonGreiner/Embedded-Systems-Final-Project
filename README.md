@@ -253,7 +253,6 @@ I Mongoose Web Server, an open-source embedded webserver platform, to locally ho
 - MacOS
   - I found that MacOS is not the friendliest environment for embedded development or electronics
   - A Windows VM was required for some purposes, such as using a USB oscilloscope
-- 
 
 ## What I Learned
 - What specifications to look for in a development board before buying
@@ -261,5 +260,6 @@ I Mongoose Web Server, an open-source embedded webserver platform, to locally ho
 - How to write a GNU linker script
 - How the IVT works and triggers the respective interrupt handlers
 - The basic code required for startup on an ARM MCU
+- The basics of Embedded Webservers
 - How to properly review a datasheet and what sections are important for an Embedded Software Engineer
 - How to use many of the largest open source tools available to Embedded Developers
