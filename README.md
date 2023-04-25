@@ -95,13 +95,10 @@ The following peripherals will be used in this project, and can be found in Sect
 
 | Peripheral | Bus | Start Address |
 | ------- | --- | ------------- |
-| USART1 | APB2 | 0x4001 1000 |
-| USART6 | APB2 | 0x4001 1400 |
 | GPIOA | AHB1 | 0x4002 0000 |
 | GPIOB | AHB1 | 0x4002 0400 |
 
 ![image](https://user-images.githubusercontent.com/65039828/234352876-be59c644-599e-4c1d-8aed-e0c7dc799e27.png)
-![image](https://user-images.githubusercontent.com/65039828/234352912-b0416102-61a5-4808-b50c-3b63b30cb664.png)
 
 The datasheet also displays the GPIO registers and their configuration bits. For example, the port mode register:
 
@@ -219,6 +216,23 @@ struct rcc {
 };
 #define RCC ((struct rcc *) 0x40023800)
 ```
+
+To enable a peripheral:
+From `main.c':
+```
+RCC->AHB1ENR |= BIT(PINBANK(led));
+```
+
+### 8. UART
+
+| Peripheral | Bus | Start Address |
+| ------- | --- | ------------- |
+| USART1 | APB2 | 0x4001 1000 |
+| USART6 | APB2 | 0x4001 1400 |
+
+![image](https://user-images.githubusercontent.com/65039828/234365783-176be1f6-9f07-445b-8083-b41a8a70590b.png)
+
+
 
 ### 8. Webserver
 
