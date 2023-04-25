@@ -135,7 +135,7 @@ From `main.c`:
 __attribute__((section(".vectors"))) void (*tab[16 + 62])(void) = {_estack, _reset};
 ```
 
-From `link.ld':
+From `link.ld`:
 ```
 /* set entry point to beginning of the firmware */
 ENTRY(_reset);
