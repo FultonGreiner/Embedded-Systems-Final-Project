@@ -1,4 +1,4 @@
-# Embedded-Systems-Final-Project
+# Bare-Metal Webserver
 
 ## Purpose
 
