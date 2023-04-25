@@ -104,6 +104,10 @@ The following peripherals will be used in this project, and can be found in Sect
 ![image](https://user-images.githubusercontent.com/65039828/234352876-be59c644-599e-4c1d-8aed-e0c7dc799e27.png)
 ![image](https://user-images.githubusercontent.com/65039828/234352912-b0416102-61a5-4808-b50c-3b63b30cb664.png)
 
+The datasheet also displays the GPIO registers and their configuration bits. For example, the port mode register:
+
+![image](https://user-images.githubusercontent.com/65039828/234358449-29cfd785-8b35-4434-aedc-ef749c37c4b1.png)
+
 From `main.h`:
 ```
 struct gpio {
