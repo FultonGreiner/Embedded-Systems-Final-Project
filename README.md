@@ -239,7 +239,13 @@ RCC->AHB1ENR |= peripheral_bit;
 
 
 ## Problems
-
+- Segger's STLinkReflash Utility
+- 
 
 ## What I Learned
-
+- What specifications to look for in a development board before buying
+- How to write a GNU linker script
+- How the IVT works and triggers the respective interrupt handlers
+- The basic code required for startup on an ARM MCU
+- How to properly review a datasheet and what sections are important for an Embedded Software Engineer
+- How to use many of the largest open source tools available to Embedded Developers
