@@ -144,20 +144,61 @@ ENTRY(_reset);
 _estack = ORIGIN(sram) + LENGTH(sram);
 ```
 
-### 3. Bare-Metal Firmware
+### 7. Reset and Clock Control (RCC)
 
+The RCC provides an interface for enabling/disabling GPIOS.
+
+The boundary address can be found in Section 5:
+
+![image](https://user-images.githubusercontent.com/65039828/234360726-96e9848a-cb9e-4d36-bec6-56c5cde4383c.png)
+
+And the register map in Section 6:
+
+![image](https://user-images.githubusercontent.com/65039828/234360846-335b8159-e1df-4c03-b00f-bf99f92efb86.png)
+![image](https://user-images.githubusercontent.com/65039828/234360872-94e9d13b-f23a-4632-8615-93cfdb68c0a0.png)
+![image](https://user-images.githubusercontent.com/65039828/234360901-a8204a0d-0b08-4d96-b850-564f2c6dc94f.png)
+
+
+From `main.h`:
 ```
-// Startup code
-__attribute__((naked, noreturn)) void _reset(void) {
-  for (;;) (void) 0;
-}
-
-extern void _estack(void);
-
-// 16 standard and 91 STM32-specific handlers
-__attribute__((section(".vectors"))) void (*tab[16 + 91])(void) = {
-  _estack, _reset
+struct rcc {
+	volatile uint32_t CR,
+			 PLLCFGR,
+			 CFGR,
+			 CIR,
+			 AHB1RSTR,
+			 AHB2RSTR,
+			 RESERVED0,
+			 RESERVED1,
+			 APB1RSTR,
+			 APB2RSTR,
+			 RESERVED3,
+			 RESERVED4,
+			 AHB1ENR,
+			 AHB2ENR,
+			 RESERVED5,
+			 RESERVED6,
+			 APB1ENR,
+			 APB2ENR,
+			 RESERVED7,
+			 RESERVED8,
+			 AHB1LPENR,
+			 AHB2LPENR,
+			 RESERVED9,
+			 RESERVED10,
+			 APB1LPENR,
+			 APB2LPENR,
+			 RESERVED11,
+			 RESERVED12,
+			 BDCR,
+			 CSR,
+			 RESERVED13,
+			 RESERVED14,
+			 SSCGR,
+			 PLLI2SCFGR,
+			 DCKCFGR;
 };
+#define RCC ((struct rcc *) 0x40023800)
 ```
 
 ## Problems
