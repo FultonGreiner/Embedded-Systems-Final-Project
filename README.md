@@ -220,7 +220,7 @@ struct rcc {
 To enable a peripheral:
 From `main.c':
 ```
-RCC->AHB1ENR |= BIT(PINBANK(led));
+RCC->AHB1ENR |= peripheral_bit;
 ```
 
 ### 8. UART
