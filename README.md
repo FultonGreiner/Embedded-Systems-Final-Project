@@ -56,9 +56,9 @@ Why I selected this project:
 ### 2. Project Architecture
 
 The project primarily consists of:
+- Startup code
 - Drivers
 - Embedded webserver
-- Power Supply
 
 ![image](https://user-images.githubusercontent.com/65039828/234351505-14eef787-66e9-48a5-9525-9acca3ce7cdf.png)
 
