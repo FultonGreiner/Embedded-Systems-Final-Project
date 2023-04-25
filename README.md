@@ -76,6 +76,9 @@ The following information can be found in Section 5 of the MCU datasheet. There 
 | Peripherals | 0x4000 0000 | 0x5FFF FFFF | 512 Mb |
 | Flash | 0x0800 0000 | 0x0807 FFFF | 512 Kb |
 
+![image](https://user-images.githubusercontent.com/65039828/234352358-77d14d8d-fff4-468e-934a-d594a478757a.png)
+
+
 #### Peripherals
 
 The following peripherals will be used in this project, and can be found in Section 5 of the MCU datasheet.
@@ -86,6 +89,8 @@ The following peripherals will be used in this project, and can be found in Sect
 | USART6 | APB2 | 0x4001 1400 |
 | GPIOA | AHB1 | 0x4002 0000 |
 | GPIOB | AHB1 | 0x4002 0400 |
+
+
 
 ## License
 
