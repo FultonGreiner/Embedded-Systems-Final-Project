@@ -7,7 +7,6 @@ Why I selected this project:
 - Stop relying on proprietary vendor SDKs
 - Improve my skills in working with the wide array of open-source Embedded Software Tools 
 - Learn to work with new MCUs or ones I design myself
-- Gain respect for the people that work with these board bring up process before any tools are created
 
 ## Progress
 
@@ -256,7 +255,6 @@ I Mongoose Web Server, an open-source embedded webserver platform, to locally ho
 
 ## What I Learned
 - What specifications to look for in a development board before buying
-- To review a board's datasheet and the resources avaiable for it BEFORE purchasing
 - How to write a GNU linker script
 - How the IVT works and triggers the respective interrupt handlers
 - The basic code required for startup on an ARM MCU
